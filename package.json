@@ -18,7 +18,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "npm run build -w @fsm/shared && npm run typecheck -w @fsm/client && npm run typecheck -w @fsm/server"
+    "typecheck": "npm run build -w @fsm/shared && npm run typecheck -w @fsm/client && npm run typecheck -w @fsm/server",
+    "test": "npm run build -w @fsm/shared && npm test -w @fsm/client"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
