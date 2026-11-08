@@ -1,0 +1,33 @@
+{
+  "name": "fsm-mmorpg",
+  "version": "0.0.0",
+  "private": true,
+  "description": "İzometrik 3D hayatta kalma MMORPG (web tabanlı)",
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "client",
+    "server"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w @fsm/server\" \"npm run dev -w @fsm/client\"",
+    "build": "npm run build -w @fsm/shared && npm run build -w @fsm/client && npm run build -w @fsm/server",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run build -w @fsm/shared && npm run typecheck -w @fsm/client && npm run typecheck -w @fsm/server"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "concurrently": "^10.0.7",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.14.0",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}
