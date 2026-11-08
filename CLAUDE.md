@@ -26,12 +26,12 @@
 
 ## Doğrulama (tamamlandı demeden önce)
 
-`npm run lint`, `npm run format:check`, `npm run build` ve `npm run dev` çalıştırılıp
+`npm run lint`, `npm run format:check`, `npm run build`, `npm test` ve `npm run dev` çalıştırılıp
 doğrulanır. Çalışmayan şey "tamamlandı" işaretlenmez.
 
 ## Komutlar
 
-`npm install` · `npm run dev` · `npm run build` · `npm run lint` · `npm run format`
+`npm install` · `npm run dev` · `npm run build` · `npm test` · `npm run lint` · `npm run format`
 
 ## Git
 

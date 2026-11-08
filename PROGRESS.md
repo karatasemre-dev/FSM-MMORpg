@@ -42,8 +42,28 @@ cihazı iPad (Safari). Geliştirici bulutta çalışır, yerel bilgisayar yoktur
 - [x] `npm run dev` tek komutla client (5173) + server (2567) başlatıyor — doğrulandı
 - [x] `npm run lint`, `npm run format:check`, `npm run build` geçiyor
 - [x] GitHub Actions iş akışları yazıldı (`ci.yml`, `deploy-pages.yml`), `docs/YAYIN-KURULUMU.md`
-- [ ] **Canlı yayın doğrulanmadı:** kullanıcı Pages ayarını yapıp `main`'e merge edene kadar
-      yayının çalıştığı kanıtlanmış sayılmaz.
+- [x] **Canlı yayın doğrulandı:** PR #1 `main`'e birleşti, Pages iş akışı (build + deploy) yeşil;
+      kullanıcı iPad Safari'de https://karatasemre-dev.github.io/FSM-MMORpg/ adresini açtı, küp dönüyor.
+
+## Faz 1 — yapılan işler
+
+Kararlar (kullanıcı onayıyla): kontrol = **yüzen sanal joystick** (ekranın sol yarısı), kamera =
+**karakteri takip eden, sabit izometrik açı**. Sunucu yok; her şey yerel.
+
+- [x] `client/src` parçalandı: `scene.ts`, `camera.ts`, `player.ts`, `loop.ts`, `input/` (joystick,
+      klavye, birleştirici), `game/movement.ts` (saf fonksiyonlar, Three.js/DOM'dan bağımsız)
+- [x] Zemin 100x100, kapsül karakter + yön "burnu", gölge (gölge kamerası oyuncuyu izler)
+- [x] Hareket: ölü bölge %10, çapraz hızlanma yok, sabit hız 5 birim/sn, `dt` ile ölçekli ve
+      `dt` üst sınırı 0.1 sn, zemin sınırında durma, yumuşak dönüş
+- [x] Dokunmatik: Pointer Events + `setPointerCapture`, tek parmak izlenir, `pointercancel`/blur'da
+      sıfırlanır; WASD/ok tuşları da çalışır
+- [x] Vitest: 15 birim testi geçti (`npm test`)
+- [x] Playwright + gerçek dokunma olayları (CDP) ile iPad dikey/yatay: joystick yukarı/sağ doğru
+      yöne gidiyor, bırakınca duruyor, sayfa kaymıyor, konsol hatası yok; klavye çalışıyor
+- [x] `lint`, `format:check`, `build`, `test` geçiyor; CI'a `npm test` eklendi
+- [ ] **Gerçek iPad Safari testi bekliyor** (PR `main`'e birleşip Pages güncellenince)
+
+Dev modunda `window.__fsm.player` otomatik testler için açığa çıkar (üretim derlemesinde yok).
 
 ## Bilinen notlar
 
@@ -55,9 +75,12 @@ cihazı iPad (Safari). Geliştirici bulutta çalışır, yerel bilgisayar yoktur
 
 ## Sıradaki adım
 
-1. Kullanıcı `docs/YAYIN-KURULUMU.md` adımlarını uygular ve yayın adresini doğrular.
-2. Onaydan sonra Faz 1 (oyuncu hareketi) için plan + prompt yazılır (kullanıcı onayıyla).
+1. Kullanıcı Faz 1'i iPad Safari'de dener (joystick hissi, takip kamerası) ve geri bildirim verir.
+2. Onaydan sonra Faz 2 (istemci–sunucu bağlantısı) için plan + prompt yazılır; Faz 2'de sunucu
+   barındırma kararı gerekir. Onay olmadan Faz 2'ye başlanmaz.
 
 ## Oturum günlüğü
 
-- **Oturum 1:** Faz 0 kurulumu yapıldı (yukarıdaki liste).
+- **Oturum 1:** Faz 0 kurulumu yapıldı (yukarıdaki liste). PR #1 birleşti, Pages yayını canlı ve
+  iPad Safari'de doğrulandı (2026-11-08). Faz 0 tamamlandı.
+- **Oturum 2:** Faz 1 kodlandı ve otomatik testlerle doğrulandı; gerçek iPad testi bekliyor.

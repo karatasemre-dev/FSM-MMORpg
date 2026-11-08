@@ -1,7 +1,7 @@
 # FSM MMORPG
 
 İzometrik açılı, 3D, hayatta kalma temalı, web tabanlı çok oyunculu oyun.
-**Durum:** Faz 0 (temel kurulum) — ekranda dönen bir küp ve boş bir sunucu odası.
+**Durum:** Faz 1 — karakteri joystick (iPad) veya WASD/ok tuşları (bilgisayar) ile gezdirebilirsiniz. Sunucu henüz istemciye bağlı değil.
 
 Teknoloji: TypeScript, Three.js + Vite (istemci), Node.js + Colyseus (sunucu), npm workspaces.
 
