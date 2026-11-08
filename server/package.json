@@ -1,0 +1,22 @@
+{
+  "name": "@fsm/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@colyseus/schema": "^5.0.45",
+    "@colyseus/ws-transport": "^0.18.4",
+    "@fsm/shared": "*",
+    "colyseus": "^0.18.12"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15"
+  }
+}
