@@ -61,7 +61,7 @@ Kararlar (kullanıcı onayıyla): kontrol = **yüzen sanal joystick** (ekranın 
 - [x] Playwright + gerçek dokunma olayları (CDP) ile iPad dikey/yatay: joystick yukarı/sağ doğru
       yöne gidiyor, bırakınca duruyor, sayfa kaymıyor, konsol hatası yok; klavye çalışıyor
 - [x] `lint`, `format:check`, `build`, `test` geçiyor; CI'a `npm test` eklendi
-- [ ] **Gerçek iPad Safari testi bekliyor** (PR `main`'e birleşip Pages güncellenince)
+- [x] **Gerçek iPad Safari testi:** kullanıcı Pages üzerinde denedi, sorunsuz çalışıyor.
 
 Dev modunda `window.__fsm.player` otomatik testler için açığa çıkar (üretim derlemesinde yok).
 
@@ -75,12 +75,11 @@ Dev modunda `window.__fsm.player` otomatik testler için açığa çıkar (üret
 
 ## Sıradaki adım
 
-1. Kullanıcı Faz 1'i iPad Safari'de dener (joystick hissi, takip kamerası) ve geri bildirim verir.
-2. Onaydan sonra Faz 2 (istemci–sunucu bağlantısı) için plan + prompt yazılır; Faz 2'de sunucu
+1. Faz 2 (istemci–sunucu bağlantısı) için plan + prompt yazılır; Faz 2'de sunucu
    barındırma kararı gerekir. Onay olmadan Faz 2'ye başlanmaz.
 
 ## Oturum günlüğü
 
 - **Oturum 1:** Faz 0 kurulumu yapıldı (yukarıdaki liste). PR #1 birleşti, Pages yayını canlı ve
   iPad Safari'de doğrulandı (2026-11-08). Faz 0 tamamlandı.
-- **Oturum 2:** Faz 1 kodlandı ve otomatik testlerle doğrulandı; gerçek iPad testi bekliyor.
+- **Oturum 2:** Faz 1 kodlandı ve otomatik testlerle doğrulandı; iPad Safari'de kullanıcı tarafından doğrulandı (2026-11-08). Faz 1 tamamlandı.
