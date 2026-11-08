@@ -42,8 +42,8 @@ cihazı iPad (Safari). Geliştirici bulutta çalışır, yerel bilgisayar yoktur
 - [x] `npm run dev` tek komutla client (5173) + server (2567) başlatıyor — doğrulandı
 - [x] `npm run lint`, `npm run format:check`, `npm run build` geçiyor
 - [x] GitHub Actions iş akışları yazıldı (`ci.yml`, `deploy-pages.yml`), `docs/YAYIN-KURULUMU.md`
-- [ ] **Canlı yayın doğrulanmadı:** kullanıcı Pages ayarını yapıp `main`'e merge edene kadar
-      yayının çalıştığı kanıtlanmış sayılmaz.
+- [x] **Canlı yayın doğrulandı:** PR #1 `main`'e birleşti, Pages iş akışı (build + deploy) yeşil;
+      kullanıcı iPad Safari'de https://karatasemre-dev.github.io/FSM-MMORpg/ adresini açtı, küp dönüyor.
 
 ## Bilinen notlar
 
@@ -55,9 +55,10 @@ cihazı iPad (Safari). Geliştirici bulutta çalışır, yerel bilgisayar yoktur
 
 ## Sıradaki adım
 
-1. Kullanıcı `docs/YAYIN-KURULUMU.md` adımlarını uygular ve yayın adresini doğrular.
-2. Onaydan sonra Faz 1 (oyuncu hareketi) için plan + prompt yazılır (kullanıcı onayıyla).
+1. Faz 1 (oyuncu hareketi, izometrik kamera, dokunmatik kontrol) için önce plan, sonra prompt
+   yazılır; kullanıcı onayı beklenir. Faz 1'e onay olmadan başlanmaz.
 
 ## Oturum günlüğü
 
-- **Oturum 1:** Faz 0 kurulumu yapıldı (yukarıdaki liste).
+- **Oturum 1:** Faz 0 kurulumu yapıldı (yukarıdaki liste). PR #1 birleşti, Pages yayını canlı ve
+  iPad Safari'de doğrulandı (2026-11-08). Faz 0 tamamlandı.
